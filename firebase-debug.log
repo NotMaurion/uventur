@@ -1,0 +1,208 @@
+[debug] [2025-04-08T19:39:57.266Z] ----------------------------------------------------------------------
+[debug] [2025-04-08T19:39:57.268Z] Command:       /Users/mbmm/.nvm/versions/node/v20.19.0/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2025-04-08T19:39:57.268Z] CLI Version:   14.1.0
+[debug] [2025-04-08T19:39:57.268Z] Platform:      darwin
+[debug] [2025-04-08T19:39:57.268Z] Node Version:  v20.19.0
+[debug] [2025-04-08T19:39:57.268Z] Time:          Tue Apr 08 2025 15:39:57 GMT-0400 (Bolivia Time)
+[debug] [2025-04-08T19:39:57.268Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-08T19:39:57.344Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-08T19:39:57.344Z] > authorizing via signed-in user (mbo1990@gmail.com)
+[debug] [2025-04-08T19:39:57.344Z] [iam] checking project uventur-7df00 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2025-04-08T19:39:57.344Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:57.344Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:57.345Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/uventur-7df00:testIamPermissions [none]
+[debug] [2025-04-08T19:39:57.345Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/uventur-7df00:testIamPermissions x-goog-quota-user=projects/uventur-7df00
+[debug] [2025-04-08T19:39:57.345Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/uventur-7df00:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2025-04-08T19:39:58.565Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/uventur-7df00:testIamPermissions 200
+[debug] [2025-04-08T19:39:58.566Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/uventur-7df00:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2025-04-08T19:39:58.566Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:58.566Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:58.566Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/uventur-7df00 [none]
+[debug] [2025-04-08T19:39:59.313Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/uventur-7df00 200
+[debug] [2025-04-08T19:39:59.313Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/uventur-7df00 {"projectId":"uventur-7df00","projectNumber":"196899729855","displayName":"uventur","name":"projects/uventur-7df00","resources":{"hostingSite":"uventur-7df00"},"state":"ACTIVE","etag":"1_28d03456-6f63-4962-b8f7-ba1afd82e8e5"}
+[info] 
+[info] === Deploying to 'uventur-7df00'...
+[info] 
+[info] i  deploying storage, firestore, hosting 
+[info] i  storage: ensuring required API firebasestorage.googleapis.com is enabled... 
+[debug] [2025-04-08T19:39:59.316Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:59.316Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:39:59.316Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/uventur-7df00/services/firebasestorage.googleapis.com [none]
+[debug] [2025-04-08T19:39:59.316Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/uventur-7df00/services/firebasestorage.googleapis.com x-goog-quota-user=projects/uventur-7df00
+[debug] [2025-04-08T19:40:00.739Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/uventur-7df00/services/firebasestorage.googleapis.com 200
+[debug] [2025-04-08T19:40:00.739Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/uventur-7df00/services/firebasestorage.googleapis.com [omitted]
+[info] ✔  storage: required API firebasestorage.googleapis.com is enabled 
+[debug] [2025-04-08T19:40:00.739Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:00.739Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:00.740Z] >>> [apiv2][query] GET https://firebasestorage.googleapis.com/v1alpha/projects/uventur-7df00/defaultBucket [none]
+[debug] [2025-04-08T19:40:02.128Z] <<< [apiv2][status] GET https://firebasestorage.googleapis.com/v1alpha/projects/uventur-7df00/defaultBucket 200
+[debug] [2025-04-08T19:40:02.128Z] <<< [apiv2][body] GET https://firebasestorage.googleapis.com/v1alpha/projects/uventur-7df00/defaultBucket {"name":"projects/uventur-7df00/defaultBucket","location":"US-CENTRAL1","bucket":{"name":"projects/uventur-7df00/buckets/uventur-7df00.firebasestorage.app"},"storageClass":"REGIONAL"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2025-04-08T19:40:02.130Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:02.130Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:02.130Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test [none]
+[debug] [2025-04-08T19:40:02.130Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test [omitted]
+[debug] [2025-04-08T19:40:03.523Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test 200
+[debug] [2025-04-08T19:40:03.523Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test {}
+[info] ✔  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2025-04-08T19:40:03.527Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:03.527Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:03.527Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test [none]
+[debug] [2025-04-08T19:40:03.527Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test [omitted]
+[debug] [2025-04-08T19:40:04.546Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test 200
+[debug] [2025-04-08T19:40:04.546Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/uventur-7df00:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2025-04-08T19:40:04.548Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:04.548Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:04.548Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions [none]
+[debug] [2025-04-08T19:40:04.548Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-04-08T19:40:06.672Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions 200
+[debug] [2025-04-08T19:40:06.672Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions {"name":"projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-04-08T19:40:06.672Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:06.673Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:06.673Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases pageSize=10&pageToken=
+[debug] [2025-04-08T19:40:07.663Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases 200
+[debug] [2025-04-08T19:40:07.664Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases {"releases":[{"name":"projects/uventur-7df00/releases/cloud.firestore","rulesetName":"projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2","createTime":"2025-04-08T19:15:48.742727Z","updateTime":"2025-04-08T19:32:09.572371Z"},{"name":"projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app","rulesetName":"projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a","createTime":"2025-04-08T16:51:50.429374Z","updateTime":"2025-04-08T19:32:08.520201Z"}]}
+[debug] [2025-04-08T19:40:07.670Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:07.670Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:07.670Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a [none]
+[debug] [2025-04-08T19:40:08.712Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a 200
+[debug] [2025-04-08T19:40:08.712Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a [omitted]
+[info] i  storage: latest version of storage.rules already up to date, skipping upload... 
+[debug] [2025-04-08T19:40:08.713Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:08.714Z] Checked if tokens are valid: true, expires at: 1744143086452
+[info] i  firestore: deploying indexes... 
+[debug] [2025-04-08T19:40:08.715Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:08.715Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:08.715Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases pageSize=10&pageToken=
+[debug] [2025-04-08T19:40:08.715Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-04-08T19:40:09.760Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases 200
+[debug] [2025-04-08T19:40:09.760Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases {"releases":[{"name":"projects/uventur-7df00/releases/cloud.firestore","rulesetName":"projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2","createTime":"2025-04-08T19:15:48.742727Z","updateTime":"2025-04-08T19:32:09.572371Z"},{"name":"projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app","rulesetName":"projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a","createTime":"2025-04-08T16:51:50.429374Z","updateTime":"2025-04-08T19:32:08.520201Z"}]}
+[debug] [2025-04-08T19:40:09.760Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:09.760Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:09.760Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2 [none]
+[debug] [2025-04-08T19:40:10.025Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-04-08T19:40:10.025Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/indexes {"indexes":[{"name":"projects/uventur-7df00/databases/(default)/collectionGroups/bookings/indexes/CICAgJim14AK","queryScope":"COLLECTION","fields":[{"fieldPath":"renterId","order":"ASCENDING"},{"fieldPath":"status","order":"ASCENDING"},{"fieldPath":"startDate","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/uventur-7df00/databases/(default)/collectionGroups/listings/indexes/CICAgOjXh4EK","queryScope":"COLLECTION","fields":[{"fieldPath":"category","order":"ASCENDING"},{"fieldPath":"price","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/uventur-7df00/databases/(default)/collectionGroups/messages/indexes/CICAgJjF9oIK","queryScope":"COLLECTION","fields":[{"fieldPath":"participants","arrayConfig":"CONTAINS"},{"fieldPath":"createdAt","order":"DESCENDING"},{"fieldPath":"__name__","order":"DESCENDING"}],"state":"READY","density":"SPARSE_ALL"},{"name":"projects/uventur-7df00/databases/(default)/collectionGroups/listings/indexes/CICAgJiUpoMK","queryScope":"COLLECTION","fields":[{"fieldPath":"location","arrayConfig":"CONTAINS"},{"fieldPath":"price","order":"ASCENDING"},{"fieldPath":"__name__","order":"ASCENDING"}],"state":"READY","density":"SPARSE_ALL"}]}
+[debug] [2025-04-08T19:40:10.025Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:10.025Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:10.026Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-04-08T19:40:10.333Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-04-08T19:40:10.333Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/uventur-7df00/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/uventur-7df00/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2025-04-08T19:40:10.334Z] Skipping existing index: {"collectionGroup":"listings","queryScope":"COLLECTION","fields":[{"fieldPath":"category","order":"ASCENDING"},{"fieldPath":"price","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[debug] [2025-04-08T19:40:10.334Z] Skipping existing index: {"collectionGroup":"listings","queryScope":"COLLECTION","fields":[{"fieldPath":"location","arrayConfig":"CONTAINS"},{"fieldPath":"price","order":"ASCENDING"}]}
+[debug] [2025-04-08T19:40:10.334Z] Skipping existing index: {"collectionGroup":"bookings","queryScope":"COLLECTION","fields":[{"fieldPath":"renterId","order":"ASCENDING"},{"fieldPath":"status","order":"ASCENDING"},{"fieldPath":"startDate","order":"DESCENDING"}]}
+[debug] [2025-04-08T19:40:10.334Z] Skipping existing index: {"collectionGroup":"messages","queryScope":"COLLECTION","fields":[{"fieldPath":"participants","arrayConfig":"CONTAINS"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[debug] [2025-04-08T19:40:10.808Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2 200
+[debug] [2025-04-08T19:40:10.808Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[info] i  hosting[uventur-7df00]: beginning deploy... 
+[info] i  hosting[uventur-7df00]: found 23 files in build 
+[debug] [2025-04-08T19:40:10.815Z] [hosting] uploading with 200 concurrency
+[debug] [2025-04-08T19:40:11.005Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.005Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.005Z] [hosting] hash cache [YnVpbGQ] stored for 23 files
+[debug] [2025-04-08T19:40:11.005Z] [hosting][hash queue][FINAL] {"max":186,"min":3,"avg":15.304347826086957,"active":0,"complete":23,"success":23,"errored":0,"retried":0,"total":23,"elapsed":188}
+[debug] [2025-04-08T19:40:11.005Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee:populateFiles [none]
+[debug] [2025-04-08T19:40:11.005Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee:populateFiles {"files":{"/service-worker.js":"6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d","/precache-manifest.657675f385cf4a15a4023b11f29b2482.js":"f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/logo192.png":"e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983","/index.html":"13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963","/logo512.png":"0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23","/asset-manifest.json":"47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf","/favicon.ico":"1463be9bedc82e16f9364eec7a1f5152cbe56229401381eed65c1496cb884407","/static/js/runtime-main.e602667b.js":"fa09216be0a215dbd48692181ea6fc899989c62ac5d7e41840321573e79232f1","/static/js/3.69d01d13.chunk.js":"1ff6d55ca0f2fd5fde4e1d2cbd0dafa0209b2e6ca809a6b69ddc8d2169bcb042","/static/js/runtime-main.e602667b.js.map":"0a2e390a60541247a86facd5b99c5f520b955c5c4e7909598fc3c1fee5c6ba62","/manifest.json":"4e1d3adad9ce7e17c0d13fac197f1c27091906f4ecf3909c9f51247bff345118","/static/js/3.69d01d13.chunk.js.map":"6403e18358d8c114acc7799946744a66d44a129d7609d279a10f4f8b2f7163b5","/static/js/main.2c4170f4.chunk.js":"6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c","/static/css/main.e18a1943.chunk.css":"ce5a8faccdf32d65a47bf998b125bbbd1d4b7e9737397c0bc31498376cad5e2c","/static/js/2.3a7cae79.chunk.js.LICENSE.txt":"30d79bf6d2f2d89f296ff43b0dbf83db9423589f3d0528ba78c1e33fc95136d0","/static/css/main.e18a1943.chunk.css.map":"27accd72c46c26a217f6225cd104418742fbb2ac23ec225d80c20516fe3ec0cb","/static/css/2.5442e9d3.chunk.css.map":"5af28662b90f81d5d718a09603c4e7fde9606dfc4338e1026bf42d240a780307","/static/css/2.5442e9d3.chunk.css":"d2bfcf4a326c86a2d2511ddcc270de9e5cb6f59fa9ab22df58e6d94b6c6098d2","/static/js/main.2c4170f4.chunk.js.map":"a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2","/static/js/2.3a7cae79.chunk.js":"70c5b490c4c28fd4b6876dd7eac6bb6e62f73c0dfc813f2c3f94c11f3e46b1aa","/images/hero-background.png":"4926cc09561d19e86bee54da59e77ed7b28e60b9208c830dc9d70c3ae4c47556","/static/js/2.3a7cae79.chunk.js.map":"c0c32725af63ea306fbf22e5b15d3a6db00c019b23c4184b3729b18cffdb8cfb"}}
+[debug] [2025-04-08T19:40:11.860Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee:populateFiles 200
+[debug] [2025-04-08T19:40:11.860Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee:populateFiles {"uploadRequiredHashes":["6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d","a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2","e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983","47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf","f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2","13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963","6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c","0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files"}
+[debug] [2025-04-08T19:40:11.860Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.860Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.860Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:11.861Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d [none]
+[debug] [2025-04-08T19:40:11.861Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d [stream]
+[debug] [2025-04-08T19:40:11.862Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2 [none]
+[debug] [2025-04-08T19:40:11.862Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2 [stream]
+[debug] [2025-04-08T19:40:11.862Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983 [none]
+[debug] [2025-04-08T19:40:11.862Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983 [stream]
+[debug] [2025-04-08T19:40:11.863Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf [none]
+[debug] [2025-04-08T19:40:11.863Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf [stream]
+[debug] [2025-04-08T19:40:11.863Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2 [none]
+[debug] [2025-04-08T19:40:11.864Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2 [stream]
+[debug] [2025-04-08T19:40:11.864Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963 [none]
+[debug] [2025-04-08T19:40:11.864Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963 [stream]
+[debug] [2025-04-08T19:40:11.864Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c [none]
+[debug] [2025-04-08T19:40:11.864Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c [stream]
+[debug] [2025-04-08T19:40:11.865Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23 [none]
+[debug] [2025-04-08T19:40:11.865Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23 [stream]
+[debug] [2025-04-08T19:40:11.865Z] [hosting][populate queue][FINAL] {"max":857,"min":857,"avg":857,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":861}
+[debug] [2025-04-08T19:40:11.865Z] [hosting] uploads queued: 8
+[debug] [2025-04-08T19:40:13.430Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c 200
+[debug] [2025-04-08T19:40:13.430Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6d269980d5d04339f253f17c545c9d29a3bdb431c9a4545106f08ad5ba128f7c [stream]
+[debug] [2025-04-08T19:40:13.431Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2 200
+[debug] [2025-04-08T19:40:13.431Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/a328d9fab30f6553ecbd8216f74c4894c53481ec6eec42534cfe7e778449c0f2 [stream]
+[debug] [2025-04-08T19:40:13.558Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983 200
+[debug] [2025-04-08T19:40:13.558Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/e43add1bb96a337e614cf860f55a4680bc804a6f5536c6f59f466d5513efd983 [stream]
+[debug] [2025-04-08T19:40:13.590Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963 200
+[debug] [2025-04-08T19:40:13.590Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/13fb23fcc9cd62eb716d48fbf5d53724a10deebec84ee194c74b1fd2f1cc9963 [stream]
+[debug] [2025-04-08T19:40:13.615Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23 200
+[debug] [2025-04-08T19:40:13.615Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/0d2d8483622466d22305c48132b585aadd916a553264e0bb7484ac4fbc6bdd23 [stream]
+[debug] [2025-04-08T19:40:13.691Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf 200
+[debug] [2025-04-08T19:40:13.691Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/47ea5c3d8fbe7aeb78c3d8c18a6b99c6e99f89a290495d8b5dc82555cdb606bf [stream]
+[debug] [2025-04-08T19:40:13.813Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d 200
+[debug] [2025-04-08T19:40:13.813Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/6095c4ab1eb4e32505969fdb658e53753a798ababbbab7b8b0a9cc4ccc75ac4d [stream]
+[debug] [2025-04-08T19:40:13.954Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2 200
+[debug] [2025-04-08T19:40:13.954Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/uventur-7df00/versions/77c0a8fd14cc21ee/files/f95b1fbd093b5a97acf236ea7fd0fb092fcc754f43b3886c62cfc522e82448e2 [stream]
+[debug] [2025-04-08T19:40:13.955Z] [hosting][upload queue][FINAL] {"max":2093,"min":1569,"avg":1774.625,"active":0,"complete":8,"success":8,"errored":0,"retried":0,"total":8,"elapsed":2095}
+[info] ✔  hosting[uventur-7df00]: file upload complete 
+[debug] [2025-04-08T19:40:13.956Z] [hosting] deploy completed after 3147ms
+[debug] [2025-04-08T19:40:13.956Z] [rules] releasing firebase.storage/uventur-7df00.firebasestorage.app with ruleset projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a
+[debug] [2025-04-08T19:40:13.956Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:13.956Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:13.956Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app [none]
+[debug] [2025-04-08T19:40:13.956Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app {"release":{"name":"projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app","rulesetName":"projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a"}}
+[debug] [2025-04-08T19:40:15.002Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app 200
+[debug] [2025-04-08T19:40:15.002Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app {"name":"projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app","rulesetName":"projects/uventur-7df00/rulesets/f14016ac-e776-44e0-8961-fff3bb1df51a","createTime":"2025-04-08T16:51:50.429374Z","updateTime":"2025-04-08T19:40:15.030252Z"}
+[debug] [2025-04-08T19:40:15.003Z] [rules] updated release projects/uventur-7df00/releases/firebase.storage/uventur-7df00.firebasestorage.app
+[info] ✔  storage: released rules storage.rules to firebase.storage 
+[debug] [2025-04-08T19:40:15.003Z] [rules] releasing cloud.firestore/(default) with ruleset projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2
+[debug] [2025-04-08T19:40:15.003Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:15.003Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:15.003Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/cloud.firestore/(default) [none]
+[debug] [2025-04-08T19:40:15.003Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/cloud.firestore/(default) {"release":{"name":"projects/uventur-7df00/releases/cloud.firestore/(default)","rulesetName":"projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2"}}
+[debug] [2025-04-08T19:40:16.051Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/cloud.firestore/(default) 200
+[debug] [2025-04-08T19:40:16.052Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/uventur-7df00/releases/cloud.firestore/(default) {"name":"projects/uventur-7df00/releases/cloud.firestore","rulesetName":"projects/uventur-7df00/rulesets/0185198d-af20-4218-a9ee-d7c4862faea2","createTime":"2025-04-08T19:15:48.742727Z","updateTime":"2025-04-08T19:40:16.082155Z"}
+[debug] [2025-04-08T19:40:16.052Z] [rules] updated release projects/uventur-7df00/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2025-04-08T19:40:16.052Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "uventur-7df00"
+    },
+    "version": "projects/196899729855/sites/uventur-7df00/versions/77c0a8fd14cc21ee"
+  }
+]
+[info] i  hosting[uventur-7df00]: finalizing version... 
+[debug] [2025-04-08T19:40:16.053Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:16.053Z] Checked if tokens are valid: true, expires at: 1744143086452
+[debug] [2025-04-08T19:40:16.053Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions/77c0a8fd14cc21ee updateMask=status%2Cconfig
+[debug] [2025-04-08T19:40:16.053Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/uventur-7df00/versions/77c0a8fd14cc21ee {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}

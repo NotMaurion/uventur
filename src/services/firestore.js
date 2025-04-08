@@ -11,9 +11,7 @@ import {
   orderBy, 
   limit, 
   startAfter,
-  serverTimestamp,
-  arrayUnion,
-  arrayRemove
+  serverTimestamp
 } from 'firebase/firestore';
 import { db } from '../firebase';
 
@@ -204,7 +202,7 @@ export const searchListings = async (searchTerm, lastDoc = null, pageSize = 10) 
   try {
     // Note: This is a simple implementation. For better search functionality,
     // consider using Algolia or Firebase Extensions for search
-    const q = query(
+    let q = query(
       collection(db, 'listings'),
       where('status', '==', 'active'),
       orderBy('title'),

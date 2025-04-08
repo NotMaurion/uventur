@@ -1,44 +1,130 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
+import React, { useContext } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Avatar
+} from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { AuthContext } from '../../context/AuthContext';
 import './Navbar.css';
 
-export default function Navbar() {
-  const { currentUser, logout } = useAuth();
-  const navigate = useNavigate();
+const Navbar = () => {
+  const { currentUser, logout } = useContext(AuthContext);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  async function handleLogout() {
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLogout = async () => {
     try {
       await logout();
-      navigate('/');
+      handleClose();
     } catch (error) {
-      console.error('Failed to log out:', error);
+      console.error('Error logging out:', error);
     }
-  }
+  };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <Link to="/">Uventur</Link>
-      </div>
-      <div className="navbar-menu">
-        <Link to="/search">Find Gear</Link>
-        {currentUser ? (
-          <>
-            <Link to="/listing/create">List Your Gear</Link>
-            <Link to="/messages">Messages</Link>
-            <Link to="/profile">Profile</Link>
-            <button onClick={handleLogout} className="logout-button">
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
-      </div>
-    </nav>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography
+          variant="h6"
+          component={RouterLink}
+          to="/"
+          sx={{
+            flexGrow: 1,
+            textDecoration: 'none',
+            color: 'inherit'
+          }}
+        >
+          Uventur
+        </Typography>
+
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Button
+            color="inherit"
+            component={RouterLink}
+            to="/search"
+          >
+            Search
+          </Button>
+
+          {currentUser ? (
+            <>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to="/listings/create"
+              >
+                Create Listing
+              </Button>
+              <IconButton
+                size="large"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                {currentUser.photoURL ? (
+                  <Avatar src={currentUser.photoURL} />
+                ) : (
+                  <AccountCircle />
+                )}
+              </IconButton>
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem
+                  component={RouterLink}
+                  to="/profile"
+                  onClick={handleClose}
+                >
+                  Profile
+                </MenuItem>
+                <MenuItem
+                  component={RouterLink}
+                  to="/messages"
+                  onClick={handleClose}
+                >
+                  Messages
+                </MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              </Menu>
+            </>
+          ) : (
+            <>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to="/login"
+              >
+                Login
+              </Button>
+              <Button
+                color="inherit"
+                component={RouterLink}
+                to="/register"
+              >
+                Register
+              </Button>
+            </>
+          )}
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
-} 
+};
+
+export default Navbar; 

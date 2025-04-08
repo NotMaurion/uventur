@@ -24,22 +24,30 @@ export default function Home() {
         <h2>How It Works</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">🔍</div>
+            <div className="feature-icon">
+              <span role="img" aria-label="Search">🔍</span>
+            </div>
             <h3>Find Gear</h3>
             <p>Search for equipment in your area</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">📅</div>
+            <div className="feature-icon">
+              <span role="img" aria-label="Calendar">📅</span>
+            </div>
             <h3>Book & Pay</h3>
             <p>Secure booking and payment</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">🎯</div>
+            <div className="feature-icon">
+              <span role="img" aria-label="Target">🎯</span>
+            </div>
             <h3>Pick Up</h3>
             <p>Meet the owner and get your gear</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">⭐</div>
+            <div className="feature-icon">
+              <span role="img" aria-label="Star">⭐</span>
+            </div>
             <h3>Review</h3>
             <p>Share your experience</p>
           </div>
