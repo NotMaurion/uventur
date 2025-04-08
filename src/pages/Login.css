@@ -1,0 +1,30 @@
+.login-container {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-paper {
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .login-paper {
+    padding: 1.5rem;
+  }
+} 

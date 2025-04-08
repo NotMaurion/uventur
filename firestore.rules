@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isListingOwner(listingId) {
+      return isAuthenticated() && 
+        get(/databases/$(database)/documents/listings/$(listingId)).data.ownerId == request.auth.uid;
+    }
+    
+    function isBookingParticipant(bookingId) {
+      return isAuthenticated() && (
+        get(/databases/$(database)/documents/bookings/$(bookingId)).data.renterId == request.auth.uid ||
+        get(/databases/$(database)/documents/bookings/$(bookingId)).data.ownerId == request.auth.uid
+      );
+    }
+    
+    function isMessageParticipant(messageId) {
+      return isAuthenticated() && (
+        get(/databases/$(database)/documents/messages/$(messageId)).data.senderId == request.auth.uid ||
+        get(/databases/$(database)/documents/messages/$(messageId)).data.receiverId == request.auth.uid
+      );
+    }
+    
+    // User profiles
+    match /users/{userId} {
+      allow read: if true; // Public profiles
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+    
+    // Listings
+    match /listings/{listingId} {
+      allow read: if true; // Public listings
+      allow create: if isAuthenticated();
+      allow update: if isListingOwner(listingId);
+      allow delete: if isListingOwner(listingId);
+    }
+    
+    // Bookings
+    match /bookings/{bookingId} {
+      allow read: if isBookingParticipant(bookingId);
+      allow create: if isAuthenticated();
+      allow update: if isBookingParticipant(bookingId);
+      allow delete: if isBookingParticipant(bookingId);
+    }
+    
+    // Reviews
+    match /reviews/{reviewId} {
+      allow read: if true; // Public reviews
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && request.auth.uid == resource.data.reviewerId;
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.reviewerId;
+    }
+    
+    // Messages
+    match /messages/{messageId} {
+      allow read: if isMessageParticipant(messageId);
+      allow create: if isAuthenticated() && request.auth.uid == request.resource.data.senderId;
+      allow update: if isMessageParticipant(messageId);
+      allow delete: if isMessageParticipant(messageId);
+    }
+    
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.userId;
+    }
+  }
+} 

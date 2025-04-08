@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# Uventur - P2P Outdoor Gear Marketplace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uventur is a peer-to-peer marketplace platform that connects people who own outdoor and adventure equipment with people who want to rent it temporarily in specific locations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User registration and login (email + social login)
+- Create and manage listings with photos, descriptions, availability calendar, and location
+- Search and filter listings by location, type of gear, dates, and price
+- Booking and payment system
+- User profiles with reviews and ratings
+- Messaging system between users
+- Admin dashboard to manage users, listings, and transactions
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, Material-UI, Formik, Yup
+- **Backend**: Firebase (Authentication, Firestore, Storage)
+- **Maps**: Google Maps API
+- **Payments**: Stripe
+- **Hosting**: Firebase Hosting
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- Firebase account
+- Google Maps API key
+- Stripe account (for payments)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/uventur.git
+   cd uventur
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the root directory with your Firebase configuration:
+   ```
+   REACT_APP_FIREBASE_API_KEY=your_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_app_id
+   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+   REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
+   ```
 
-### `npm run eject`
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Firebase Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Create a new Firebase project at [https://console.firebase.google.com/](https://console.firebase.google.com/)
+2. Enable Authentication (Email/Password and Google)
+3. Create a Firestore database
+4. Set up Firebase Storage
+5. Deploy Firestore and Storage rules:
+   ```
+   ./deploy-rules.sh
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Build the production version:
+   ```
+   npm run build
+   ```
 
-## Learn More
+2. Deploy to Firebase Hosting:
+   ```
+   firebase deploy
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+uventur/
+├── public/                 # Static files
+├── src/                    # Source files
+│   ├── components/         # Reusable components
+│   │   ├── auth/           # Authentication components
+│   │   ├── layout/         # Layout components
+│   │   ├── listing/        # Listing components
+│   │   ├── profile/        # Profile components
+│   │   ├── search/         # Search components
+│   │   ├── booking/        # Booking components
+│   │   └── messaging/      # Messaging components
+│   ├── context/            # React context
+│   ├── hooks/              # Custom hooks
+│   ├── pages/              # Page components
+│   ├── services/           # API services
+│   ├── utils/              # Utility functions
+│   ├── assets/             # Images, fonts, etc.
+│   ├── App.js              # Main App component
+│   ├── index.js            # Entry point
+│   └── firebase.js         # Firebase configuration
+├── .env                    # Environment variables
+├── firebase.json           # Firebase configuration
+├── firestore.rules         # Firestore security rules
+├── storage.rules           # Storage security rules
+└── package.json            # Dependencies and scripts
+```
 
-### Code Splitting
+## Security Rules
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application uses Firebase Security Rules to protect data:
 
-### Analyzing the Bundle Size
+- **Firestore Rules**: Control access to the database
+- **Storage Rules**: Control access to uploaded files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To deploy the rules:
+```
+./deploy-rules.sh
+```
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Firebase for backend services
+- Material-UI for UI components
+- React community for libraries and tools
